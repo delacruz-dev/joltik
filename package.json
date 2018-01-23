@@ -2,7 +2,7 @@
   "name": "yocto",
   "version": "0.0.1",
   "description": "A micro VDOM library for learning purposes",
-  "main": "dist",
+  "main": "index.js",
   "scripts": {
     "phoenix": "rm -rf node_modules package-lock.json",
     "test": "jest",

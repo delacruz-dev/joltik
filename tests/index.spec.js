@@ -13,3 +13,13 @@ test('renders nested elements', () => {
     expect(element.children[0]).toBeInstanceOf(HTMLSpanElement)
     expect(element.children[0].innerHTML).toEqual('Hello, world!')
 })
+
+test('sets props', () => {
+    const elementWithProps = createElement(
+        <div className='test-className'>
+            Element with props
+        </div>
+    )
+
+    expect(elementWithProps.getAttribute('class')).toEqual('test-className')
+})
