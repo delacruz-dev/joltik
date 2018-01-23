@@ -1,0 +1,32 @@
+{
+  "name": "yocto",
+  "version": "0.0.1",
+  "description": "A micro VDOM library for learning purposes",
+  "main": "dist",
+  "scripts": {
+    "phoenix": "rm -rf node_modules package-lock.json",
+    "test": "jest",
+    "start": "parcel examples/index.html",
+    "commit": "git-cz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danderu/yocto.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.1.0",
+    "jest": "^22.1.4",
+    "parcel-bundler": "^1.5.0"
+  },
+  "dependencies": {},
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
