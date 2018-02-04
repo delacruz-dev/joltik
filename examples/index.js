@@ -1,15 +1,20 @@
-import { y, createElement } from '../'
+import { y, createElement } from "../";
 /** @jsx y */
 
-const Button = <button onClick={() => alert('yocto works!')}>Click me!</button>
+const Button = <button onClick={() => alert("yocto works!")}>Click me!</button>;
 
-const helloWorld = (
-    <div className='hello'>
-        Hello, world!
-        <Button />
-    </div>
-)
+const Title = <h1>The title of the post</h1>;
 
-const root = document.createElement('div')
-root.appendChild(createElement(helloWorld))
-document.body.appendChild(root)
+const Post = (
+  <article className="post">
+    <Title />
+    <p>Hello, world!</p>
+    <Button />
+  </article>
+);
+
+const root = document.getElementById("root");
+Array.from(root.children).forEach(element => {
+  root.removeChild(element);
+});
+root.appendChild(createElement(Post));
