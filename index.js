@@ -7,6 +7,14 @@ export function y(type, props, ...args) {
   };
 }
 
+function isEventProp(name) {
+  return /^on/.test(name);
+}
+
+function extractEventName(name) {
+  return name.slice(2).toLowerCase();
+}
+
 function setProp(node, name, value) {
   if (name === "className") {
     name = "class";
@@ -19,7 +27,17 @@ function setProps(node, props = {}) {
   if (!props) {
     return;
   }
-  Object.keys(props).forEach(name => setProp(node, name, props[name]));
+  Object.keys(props)
+    .filter(prop => !isEventProp(prop))
+    .forEach(name => setProp(node, name, props[name]));
+}
+
+function addEventListeners(node, props) {
+  Object.keys(props)
+    .filter(isEventProp)
+    .forEach(event =>
+      node.addEventListener(extractEventName(event), props[event])
+    );
 }
 
 export function createElement(node) {
@@ -33,6 +51,7 @@ export function createElement(node) {
 
   const element = document.createElement(node.type);
   setProps(element, node.props);
+  addEventListeners(element, node.props);
   node.children.map(createElement).forEach(child => element.appendChild(child));
   return element;
 }
