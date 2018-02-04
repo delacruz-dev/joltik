@@ -6,6 +6,7 @@
   "scripts": {
     "phoenix": "rm -rf node_modules package-lock.json",
     "test": "jest",
+    "build": "parcel build index.js",
     "start": "parcel examples/index.html",
     "commit": "git-cz",
     "precommit": "lint-staged"

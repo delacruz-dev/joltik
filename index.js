@@ -32,7 +32,10 @@ function setProps(node, props = {}) {
     .forEach(name => setProp(node, name, props[name]));
 }
 
-function addEventListeners(node, props) {
+function addEventListeners(node, props = {}) {
+  if (!props) {
+    return;
+  }
   Object.keys(props)
     .filter(isEventProp)
     .forEach(event =>
