@@ -23,7 +23,7 @@ function setProp(node, name, value) {
   node.setAttribute(name, value);
 }
 
-function setProps(node, props = {}) {
+function setAttributes(node, props = {}) {
   if (!props) {
     return;
   }
@@ -53,7 +53,7 @@ export function createElement(node) {
   }
 
   const element = document.createElement(node.type);
-  setProps(element, node.props);
+  setAttributes(element, node.props);
   addEventListeners(element, node.props);
   node.children.map(createElement).forEach(child => element.appendChild(child));
   return element;

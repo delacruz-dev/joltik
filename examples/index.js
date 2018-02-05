@@ -6,7 +6,7 @@ const Button = <button onClick={() => alert("yocto works!")}>Click me!</button>;
 const Title = <h1>The title of the post</h1>;
 
 const Post = (
-  <article className="post">
+  <article class="post">
     <Title />
     <p>Hello, world!</p>
     <Button />
