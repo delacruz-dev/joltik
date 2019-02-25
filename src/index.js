@@ -73,6 +73,10 @@ export function createElement(node) {
     return createElement(node.type);
   }
 
+  if (typeof node.type === "function") {
+    return createElement(node.type(node.props));
+  }
+
   const element = document.createElement(node.type);
 
   // Sets the element attributes
