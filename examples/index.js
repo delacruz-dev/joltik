@@ -1,20 +1,20 @@
-import { y, createElement } from "../";
-/** @jsx y */
+import { createElement, updateElement } from "../src";
+import { Post } from "./post";
+import { List1, List2 } from "./lists";
+import { ListWithStyles } from "./list-with-styles";
 
-const Button = <button onClick={() => alert("yocto works!")}>Click me!</button>;
+// Static example
+const st = document.getElementById("static");
+st.appendChild(createElement(Post));
 
-const Title = <h1>The title of the post</h1>;
+// Diffing example
+const diffing = document.getElementById("diffing");
+diffing.appendChild(createElement(List1));
 
-const Post = (
-  <article class="post">
-    <Title />
-    <p>Hello, world!</p>
-    <Button />
-  </article>
-);
-
-const root = document.getElementById("root");
-Array.from(root.children).forEach(element => {
-  root.removeChild(element);
+document.getElementById("reload").addEventListener("click", () => {
+  updateElement(diffing, List2, List1);
 });
-root.appendChild(createElement(Post));
+
+// Props example
+const props = document.getElementById("props");
+props.appendChild(createElement(ListWithStyles));

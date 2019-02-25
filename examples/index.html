@@ -1,16 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <style>
+      .post {
+        background-color: burlywood;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h3>Static content</h3>
+      <div id="static"></div>
+    </section>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Microvdom Examples</title>
-</head>
+    <section>
+      <h3>Diffing example</h3>
+      <div id="diffing"></div>
+      <button id="reload">Reload</button>
+    </section>
 
-<body>
-    <div id="root"></div>
-</body>
-<script src="index.js"></script>
+    <section>
+      <h3>Props example</h3>
+      <div id="props"></div>
+    </section>
 
+    <script src="index.js"></script>
+  </body>
 </html>

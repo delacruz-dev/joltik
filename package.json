@@ -2,11 +2,11 @@
   "name": "yocto",
   "version": "0.0.1",
   "description": "A micro VDOM library for learning purposes",
-  "main": "index.js",
+  "main": "src",
   "scripts": {
     "phoenix": "rm -rf node_modules package-lock.json && npm install",
     "test": "jest",
-    "build": "parcel build index.js",
+    "build": "parcel build src/index.js",
     "start": "parcel examples/index.html",
     "commit": "git-cz",
     "precommit": "lint-staged"
@@ -15,9 +15,10 @@
     "type": "git",
     "url": "https://github.com/danderu/yocto.git"
   },
-  "author": "",
+  "author": "Daniel de la Cruz <mail@danidev.es>",
   "license": "ISC",
   "devDependencies": {
+    "babel-core": "6.26.3",
     "babel-plugin-transform-react-jsx": "6.24.1",
     "babel-preset-env": "1.7.0",
     "commitizen": "3.0.7",
