@@ -1,6 +1,6 @@
 {
   "name": "joltik",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A micro VDOM library for learning purposes",
   "main": "dist/index.js",
   "scripts": {
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/danderu/joltik.git"
+    "url": "https://github.com/d4nidev/joltik.git"
   },
   "author": "Daniel de la Cruz <mail@danidev.es>",
   "license": "ISC",

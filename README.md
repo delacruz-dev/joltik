@@ -14,7 +14,7 @@ I'm just learning how a VDOM (Virtual Document Object Model) library works by bu
 
 ## References
 
-[How to write your own Virtual DOM](https://medium.com/@deathmood/how-to-write-your-own-virtual-dom-ee74acc13060)
-[WTF is JSX](https://jasonformat.com/wtf-is-jsx/)
+- [How to write your own Virtual DOM](https://medium.com/@deathmood/how-to-write-your-own-virtual-dom-ee74acc13060)
+- [WTF is JSX](https://jasonformat.com/wtf-is-jsx/)
 
 [joltik]: https://cdn.bulbagarden.net/upload/e/e7/Spr_5b_595.png
