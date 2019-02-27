@@ -1,10 +1,10 @@
 /**
- * yocto's JSX pragma
+ * joltik's JSX pragma
  * @param {*} type
  * @param {*} props
  * @param  {...any} args
  */
-export function y(type, props, ...args) {
+export function j(type, props, ...args) {
   const children = args.length ? [].concat(...args) : null;
   return {
     type,
@@ -65,14 +65,19 @@ function addEventListeners(node, props = {}) {
  * @param {*} node
  */
 export function createElement(node) {
+  // Text nodes can be created stright away, and can't have children or attributes.
   if (typeof node === "string") {
     return document.createTextNode(node);
   }
 
+  // Object nodes are new tags, and it needs to be considered a new element.
+  // the function uses recursion to parse this object.
   if (typeof node.type === "object") {
     return createElement(node.type);
   }
 
+  // A functional component is parameterized. It just needs
+  // to call the function with the props as the arguments.
   if (typeof node.type === "function") {
     return createElement(node.type(node.props));
   }

@@ -1,5 +1,5 @@
-/** @jsx y */
-import { y, createElement } from "../";
+/** @jsx j */
+import { j, createElement } from "../";
 
 test("renders a hello world", () => {
   const element = createElement(<div>Hello, world!</div>);

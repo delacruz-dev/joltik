@@ -1,5 +1,5 @@
-/** @jsx y */
-import { y } from "../src";
+/** @jsx j */
+import { j } from "../src";
 import { Button } from "./button";
 import { Title } from "./title";
 

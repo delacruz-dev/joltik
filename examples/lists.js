@@ -1,5 +1,5 @@
-/** @jsx y */
-import { y } from "../src";
+/** @jsx j */
+import { j } from "../src";
 
 const List1 = (
   <ul>
@@ -11,7 +11,7 @@ const List1 = (
 const List2 = (
   <ul>
     <li>non changing list item</li>
-    <li>changed by yocto diffing!</li>
+    <li>changed by joltik diffing!</li>
   </ul>
 );
 

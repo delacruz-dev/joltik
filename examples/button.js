@@ -1,5 +1,5 @@
-/** @jsx y */
-import { y } from "../src";
+/** @jsx j */
+import { j } from "../src";
 
 /**
  * A basic JSX component, non parameterized, with attributes
@@ -7,7 +7,7 @@ import { y } from "../src";
 const Button = <button onClick={handleClick}>Click me!</button>;
 
 function handleClick() {
-  alert("yocto works!");
+  alert("joltik works!");
 }
 
 export { Button };

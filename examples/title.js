@@ -1,5 +1,5 @@
-/** @jsx y */
-import { y } from "../src";
+/** @jsx j */
+import { j } from "../src";
 
 /**
  * A basic JSX component, non parameterized, without attributes

@@ -1,5 +1,5 @@
-/** @jsx y */
-import { createElement, updateElement, y } from "../src";
+/** @jsx j */
+import { createElement, updateElement, j } from "../src";
 import { Greeting } from "./greeting";
 import { ListWithStyles } from "./list-with-styles";
 import { List1, List2 } from "./lists";

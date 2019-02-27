@@ -1,8 +1,8 @@
 {
-  "name": "yocto",
+  "name": "joltik",
   "version": "0.0.1",
   "description": "A micro VDOM library for learning purposes",
-  "main": "src",
+  "main": "dist/index.js",
   "scripts": {
     "phoenix": "rm -rf node_modules package-lock.json && npm install",
     "test": "jest",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/danderu/yocto.git"
+    "url": "https://github.com/danderu/joltik.git"
   },
   "author": "Daniel de la Cruz <mail@danidev.es>",
   "license": "ISC",
