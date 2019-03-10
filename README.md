@@ -62,7 +62,7 @@ export const HelloWorld = ({ text }) => <h1 className="title">{text}</h1>;
 
 To render an element, you would do:
 
-```
+```jsx
 // index.js
 import { j, createElement } from "joltik";
 import { HelloWolrd } from './HelloWorld';
