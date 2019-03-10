@@ -8,6 +8,7 @@
   "scripts": {
     "phoenix": "rm -rf node_modules package-lock.json && npm install",
     "test": "jest",
+    "test:watch": "npm run test -- --watch",
     "build": "microbundle",
     "start": "parcel examples/index.html",
     "commit": "git-cz",
@@ -29,10 +30,10 @@
     "commitizen": "3.0.7",
     "cz-conventional-changelog": "2.1.0",
     "husky": "1.3.1",
-    "jest": "24.1.0",
-    "lint-staged": "8.1.4",
-    "microbundle": "^0.11.0",
-    "parcel-bundler": "1.11.0",
+    "jest": "24.3.1",
+    "lint-staged": "8.1.5",
+    "microbundle": "0.11.0",
+    "parcel-bundler": "1.12.0",
     "prettier": "1.16.4"
   },
   "config": {
