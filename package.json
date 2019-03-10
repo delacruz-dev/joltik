@@ -1,6 +1,6 @@
 {
   "name": "joltik",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A micro VDOM library for learning purposes",
   "main": "lib/index.js",
   "umd:main": "lib/index.umd.js",
