@@ -65,7 +65,7 @@ To render an element, you would do:
 ```jsx
 // index.js
 import { j, createElement } from "joltik";
-import { HelloWolrd } from './HelloWorld';
+import { HelloWolrd } from "./HelloWorld";
 
 document
   .getElementById("app")
