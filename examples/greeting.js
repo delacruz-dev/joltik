@@ -3,7 +3,7 @@ import { j } from "../src";
 
 /**
  * A functional component, receiving parameters as props
- * @param {*} param0
+ * @param {string} props.name
  */
 const Greeting = ({ name }) => <div>Hello, {name}!</div>;
 
