@@ -1,6 +1,6 @@
 {
   "name": "joltik",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A micro VDOM library for learning purposes",
   "main": "lib/index.js",
   "umd:main": "lib/index.umd.js",
@@ -13,6 +13,9 @@
     "commit": "git-cz",
     "precommit": "lint-staged"
   },
+  "files": [
+    "lib"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/d4nidev/joltik.git"
