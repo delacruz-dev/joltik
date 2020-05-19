@@ -107,6 +107,14 @@ export function createElement(node) {
  * @param {*} index
  */
 export function updateElement(parentNode, newNode, oldNode, index = 0) {
+  if (newNode && typeof newNode.type === "function") {
+    newNode = newNode.type(newNode.props);
+  }
+
+  if (oldNode && typeof oldNode.type === "function") {
+    oldNode = oldNode.type(oldNode.props);
+  }
+
   // If the old node doesn't exist, it adds the new one to the parent.
   if (!oldNode) {
     parentNode.appendChild(createElement(newNode));
@@ -120,8 +128,8 @@ export function updateElement(parentNode, newNode, oldNode, index = 0) {
       parentNode.childNodes[index]
     );
   } else if (newNode.type) {
-    const newLength = newNode.children.length;
-    const oldLength = oldNode.children.length;
+    const newLength = newNode.children ? newNode.children.length : 0;
+    const oldLength = oldNode.children ? oldNode.children.length : 0;
 
     // Recursively updates its children
     for (let i = 0; i < newLength || i < oldLength; i++) {
