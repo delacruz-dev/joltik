@@ -66,7 +66,7 @@ function addEventListeners(node, props = {}) {
  */
 export function createElement(node) {
   // Text nodes can be created stright away, and can't have children or attributes.
-  if (typeof node === "string") {
+  if (typeof node === "string" || typeof node === "number") {
     return document.createTextNode(node);
   }
 
