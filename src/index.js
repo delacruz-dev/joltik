@@ -116,10 +116,10 @@ export function updateElement(parentNode, newNode, oldNode, index = 0) {
   }
 
   // If the old node doesn't exist, it adds the new one to the parent.
-  if (!oldNode) {
+  if (oldNode === undefined || oldNode === null) {
     parentNode.appendChild(createElement(newNode));
     // If the new node doesn't exist, it removes it from the parent.
-  } else if (!newNode) {
+  } else if (oldNode === undefined || oldNode === null) {
     parentNode.removeChild(parentNode.childNodes[index]);
     // If the nodes have changed, it replaces the old one with its new version.
   } else if (nodesAreDifferent(newNode, oldNode)) {
@@ -151,7 +151,8 @@ export function updateElement(parentNode, newNode, oldNode, index = 0) {
 function nodesAreDifferent(first, second) {
   return (
     typeof first !== typeof second ||
-    (typeof first === "string" && first !== second) ||
+    ((typeof first === "string" || typeof first === "number") &&
+      first !== second) ||
     first.type !== second.type
   );
 }
