@@ -119,7 +119,7 @@ export function updateElement(parentNode, newNode, oldNode, index = 0) {
   if (oldNode === undefined || oldNode === null) {
     parentNode.appendChild(createElement(newNode));
     // If the new node doesn't exist, it removes it from the parent.
-  } else if (oldNode === undefined || oldNode === null) {
+  } else if (newNode === undefined || newNode === null) {
     parentNode.removeChild(parentNode.childNodes[index]);
     // If the nodes have changed, it replaces the old one with its new version.
   } else if (nodesAreDifferent(newNode, oldNode)) {
