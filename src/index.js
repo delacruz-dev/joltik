@@ -66,7 +66,7 @@ function addEventListeners(node, props = {}) {
  */
 export function createElement(node) {
   // Text nodes can be created stright away, and can't have children or attributes.
-  if (typeof node === "string") {
+  if (typeof node === "string" || typeof node === "number") {
     return document.createTextNode(node);
   }
 
@@ -107,11 +107,19 @@ export function createElement(node) {
  * @param {*} index
  */
 export function updateElement(parentNode, newNode, oldNode, index = 0) {
+  if (newNode && typeof newNode.type === "function") {
+    newNode = newNode.type(newNode.props);
+  }
+
+  if (oldNode && typeof oldNode.type === "function") {
+    oldNode = oldNode.type(oldNode.props);
+  }
+
   // If the old node doesn't exist, it adds the new one to the parent.
-  if (!oldNode) {
+  if (oldNode === undefined || oldNode === null) {
     parentNode.appendChild(createElement(newNode));
     // If the new node doesn't exist, it removes it from the parent.
-  } else if (!newNode) {
+  } else if (newNode === undefined || newNode === null) {
     parentNode.removeChild(parentNode.childNodes[index]);
     // If the nodes have changed, it replaces the old one with its new version.
   } else if (nodesAreDifferent(newNode, oldNode)) {
@@ -120,8 +128,8 @@ export function updateElement(parentNode, newNode, oldNode, index = 0) {
       parentNode.childNodes[index]
     );
   } else if (newNode.type) {
-    const newLength = newNode.children.length;
-    const oldLength = oldNode.children.length;
+    const newLength = newNode.children ? newNode.children.length : 0;
+    const oldLength = oldNode.children ? oldNode.children.length : 0;
 
     // Recursively updates its children
     for (let i = 0; i < newLength || i < oldLength; i++) {
@@ -143,7 +151,8 @@ export function updateElement(parentNode, newNode, oldNode, index = 0) {
 function nodesAreDifferent(first, second) {
   return (
     typeof first !== typeof second ||
-    (typeof first === "string" && first !== second) ||
+    ((typeof first === "string" || typeof first === "number") &&
+      first !== second) ||
     first.type !== second.type
   );
 }

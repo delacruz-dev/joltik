@@ -4,6 +4,21 @@ import { Greeting } from "./greeting";
 import { ListWithStyles } from "./list-with-styles";
 import { List1, List2 } from "./lists";
 import { Post } from "./post";
+import { Counter } from "./counter";
+
+// Counter example
+const counter = document.getElementById("counter");
+let count = 0;
+let component = <Counter onClick={handleClick} count={count} />;
+
+counter.appendChild(createElement(component));
+
+function handleClick(value) {
+  count = count + value;
+  const update = <Counter onClick={handleClick} count={count} />;
+  updateElement(counter, update, component);
+  component = update;
+}
 
 // Static example
 const st = document.getElementById("static");
